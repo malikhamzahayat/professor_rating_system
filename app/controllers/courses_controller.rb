@@ -3,6 +3,8 @@ class CoursesController < ApplicationController
 	
   def index
    	@courses = Course.all
+
+   	Rails.logger.info 'Index view accessed'
   end
 
   def show
