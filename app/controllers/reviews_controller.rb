@@ -28,6 +28,9 @@ class ReviewsController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
+
+#	Rails.logger.info 'Show view of persons #' + review_params[:rating] + ' accessed'
+
     end
   end
 

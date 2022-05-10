@@ -8,10 +8,12 @@
 
   <h2>Professor page</h2>
     <h3>Professor ratings: <%= @professor.reviews.average(:rating) %></h3>
+    <h3>Professor ID: <%= @professor.id %></h3>
+    
   <div>
 
   <div>
-  <%= link_to 'Add reviews', new_review_path, class:"btn btn-secondary" %>
+  <%= link_to 'Add reviews', new_review_path(id: @professor.id), class:"btn btn-secondary" %>
   </div>
 
  
