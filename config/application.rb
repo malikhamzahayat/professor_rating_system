@@ -20,8 +20,10 @@ module ProfessorRatingSystem
     # config.eager_load_paths << Rails.root.join("extras")
 
     # create a logger with a file as a logging target
-    config.logger = Logger.new('log/important.log')
+    config.logger = Logger.new('log/logs.log')
     # set the minimum log level
     config.log_level = :info
+    config.logger.datetime_format = "%d-%m-%Y %H:%M:%S"
+
   end
 end
