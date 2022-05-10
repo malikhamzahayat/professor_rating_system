@@ -4,17 +4,21 @@ class ReviewsController < ApplicationController
   
   def index
    	@reviews = Review.all
+   	Rails.logger.info 'Index view accessed'
   end
 
   def show
   	@review = Review.find(params[:id])
+   	Rails.logger.info 'Show view of Review no. '+ params[:id] + ' accessed'
   end
 
   def new
     @review = Review.new
+   	Rails.logger.info 'New view accessed'
   end
 
   def edit
+   	Rails.logger.info 'Edit view accessed'
   end
 
   def create
@@ -29,7 +33,7 @@ class ReviewsController < ApplicationController
         format.json { render json: @review.errors, status: :unprocessable_entity }
       end
 
-#	Rails.logger.info 'Show view of persons #' + review_params[:rating] + ' accessed'
+	#Rails.logger.info 'Show view of persons #' + review_params[:rating] + ' accessed'
 
     end
   end

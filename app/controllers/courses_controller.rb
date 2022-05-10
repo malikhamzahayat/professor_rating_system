@@ -2,6 +2,8 @@ class CoursesController < ApplicationController
   before_action :set_course, only: %i[ show edit update destroy ]
 	
   def index
+
+#  	byebug
    	@courses = Course.all
 
    	Rails.logger.info 'Index view accessed'
@@ -9,13 +11,20 @@ class CoursesController < ApplicationController
 
   def show
   	@course = Course.find(params[:id])
+
+  	Rails.logger.info 'Show view of Course no. '+ params[:id] +' accessed'
   end
 
   def new
     @course = Course.new
+
+   	Rails.logger.info 'New view accessed'
+
   end
 
   def edit
+   	Rails.logger.info 'Edit view accessed'
+
   end
 
   def create
